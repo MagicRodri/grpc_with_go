@@ -1,0 +1,28 @@
+syntax = "proto3";
+
+import "google/protobuf/timestamp.proto";
+
+option go_package = "/status";
+
+package status;
+
+message StatusMessage {
+  string uuid = 1;
+  google.protobuf.Timestamp timestamp = 2;
+}
+
+message StatusRequest {
+  string uuid = 1;
+}
+
+message StatusResponse {
+  string uuid = 1;
+  string message = 2;
+  int32 code = 3;
+}
+
+service StatusService {
+  rpc GetStatus(StatusRequest) returns (StatusResponse);
+  rpc SetStatus(StatusMessage) returns (StatusResponse);
+  rpc DeleteStatus(StatusRequest) returns (StatusResponse);
+}

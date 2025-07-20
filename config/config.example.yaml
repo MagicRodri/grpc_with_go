@@ -1,0 +1,9 @@
+kafka:
+  brokers:
+    - localhost:9092
+    - localhost:9093
+  credentials:
+    username: user
+    password: pass
+grpc:
+  address: localhost:50051
