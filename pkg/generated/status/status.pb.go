@@ -2,7 +2,7 @@
 // versions:
 // 	protoc-gen-go v1.36.6
 // 	protoc        v6.31.1
-// source: internal/proto/status.proto
+// source: protos/status.proto
 
 package status
 
@@ -32,7 +32,7 @@ type StatusMessage struct {
 
 func (x *StatusMessage) Reset() {
 	*x = StatusMessage{}
-	mi := &file_internal_proto_status_proto_msgTypes[0]
+	mi := &file_protos_status_proto_msgTypes[0]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -44,7 +44,7 @@ func (x *StatusMessage) String() string {
 func (*StatusMessage) ProtoMessage() {}
 
 func (x *StatusMessage) ProtoReflect() protoreflect.Message {
-	mi := &file_internal_proto_status_proto_msgTypes[0]
+	mi := &file_protos_status_proto_msgTypes[0]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -57,7 +57,7 @@ func (x *StatusMessage) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use StatusMessage.ProtoReflect.Descriptor instead.
 func (*StatusMessage) Descriptor() ([]byte, []int) {
-	return file_internal_proto_status_proto_rawDescGZIP(), []int{0}
+	return file_protos_status_proto_rawDescGZIP(), []int{0}
 }
 
 func (x *StatusMessage) GetUuid() string {
@@ -83,7 +83,7 @@ type StatusRequest struct {
 
 func (x *StatusRequest) Reset() {
 	*x = StatusRequest{}
-	mi := &file_internal_proto_status_proto_msgTypes[1]
+	mi := &file_protos_status_proto_msgTypes[1]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -95,7 +95,7 @@ func (x *StatusRequest) String() string {
 func (*StatusRequest) ProtoMessage() {}
 
 func (x *StatusRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_internal_proto_status_proto_msgTypes[1]
+	mi := &file_protos_status_proto_msgTypes[1]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -108,7 +108,7 @@ func (x *StatusRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use StatusRequest.ProtoReflect.Descriptor instead.
 func (*StatusRequest) Descriptor() ([]byte, []int) {
-	return file_internal_proto_status_proto_rawDescGZIP(), []int{1}
+	return file_protos_status_proto_rawDescGZIP(), []int{1}
 }
 
 func (x *StatusRequest) GetUuid() string {
@@ -129,7 +129,7 @@ type StatusResponse struct {
 
 func (x *StatusResponse) Reset() {
 	*x = StatusResponse{}
-	mi := &file_internal_proto_status_proto_msgTypes[2]
+	mi := &file_protos_status_proto_msgTypes[2]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -141,7 +141,7 @@ func (x *StatusResponse) String() string {
 func (*StatusResponse) ProtoMessage() {}
 
 func (x *StatusResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_internal_proto_status_proto_msgTypes[2]
+	mi := &file_protos_status_proto_msgTypes[2]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -154,7 +154,7 @@ func (x *StatusResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use StatusResponse.ProtoReflect.Descriptor instead.
 func (*StatusResponse) Descriptor() ([]byte, []int) {
-	return file_internal_proto_status_proto_rawDescGZIP(), []int{2}
+	return file_protos_status_proto_rawDescGZIP(), []int{2}
 }
 
 func (x *StatusResponse) GetUuid() string {
@@ -178,11 +178,11 @@ func (x *StatusResponse) GetCode() int32 {
 	return 0
 }
 
-var File_internal_proto_status_proto protoreflect.FileDescriptor
+var File_protos_status_proto protoreflect.FileDescriptor
 
-const file_internal_proto_status_proto_rawDesc = "" +
+const file_protos_status_proto_rawDesc = "" +
 	"\n" +
-	"\x1binternal/proto/status.proto\x12\x06status\x1a\x1fgoogle/protobuf/timestamp.proto\"]\n" +
+	"\x13protos/status.proto\x12\x06status\x1a\x1fgoogle/protobuf/timestamp.proto\"]\n" +
 	"\rStatusMessage\x12\x12\n" +
 	"\x04uuid\x18\x01 \x01(\tR\x04uuid\x128\n" +
 	"\ttimestamp\x18\x02 \x01(\v2\x1a.google.protobuf.TimestampR\ttimestamp\"#\n" +
@@ -198,25 +198,25 @@ const file_internal_proto_status_proto_rawDesc = "" +
 	"\fDeleteStatus\x12\x15.status.StatusRequest\x1a\x16.status.StatusResponseB\tZ\a/statusb\x06proto3"
 
 var (
-	file_internal_proto_status_proto_rawDescOnce sync.Once
-	file_internal_proto_status_proto_rawDescData []byte
+	file_protos_status_proto_rawDescOnce sync.Once
+	file_protos_status_proto_rawDescData []byte
 )
 
-func file_internal_proto_status_proto_rawDescGZIP() []byte {
-	file_internal_proto_status_proto_rawDescOnce.Do(func() {
-		file_internal_proto_status_proto_rawDescData = protoimpl.X.CompressGZIP(unsafe.Slice(unsafe.StringData(file_internal_proto_status_proto_rawDesc), len(file_internal_proto_status_proto_rawDesc)))
+func file_protos_status_proto_rawDescGZIP() []byte {
+	file_protos_status_proto_rawDescOnce.Do(func() {
+		file_protos_status_proto_rawDescData = protoimpl.X.CompressGZIP(unsafe.Slice(unsafe.StringData(file_protos_status_proto_rawDesc), len(file_protos_status_proto_rawDesc)))
 	})
-	return file_internal_proto_status_proto_rawDescData
+	return file_protos_status_proto_rawDescData
 }
 
-var file_internal_proto_status_proto_msgTypes = make([]protoimpl.MessageInfo, 3)
-var file_internal_proto_status_proto_goTypes = []any{
+var file_protos_status_proto_msgTypes = make([]protoimpl.MessageInfo, 3)
+var file_protos_status_proto_goTypes = []any{
 	(*StatusMessage)(nil),         // 0: status.StatusMessage
 	(*StatusRequest)(nil),         // 1: status.StatusRequest
 	(*StatusResponse)(nil),        // 2: status.StatusResponse
 	(*timestamppb.Timestamp)(nil), // 3: google.protobuf.Timestamp
 }
-var file_internal_proto_status_proto_depIdxs = []int32{
+var file_protos_status_proto_depIdxs = []int32{
 	3, // 0: status.StatusMessage.timestamp:type_name -> google.protobuf.Timestamp
 	1, // 1: status.StatusService.GetStatus:input_type -> status.StatusRequest
 	0, // 2: status.StatusService.SetStatus:input_type -> status.StatusMessage
@@ -231,26 +231,26 @@ var file_internal_proto_status_proto_depIdxs = []int32{
 	0, // [0:1] is the sub-list for field type_name
 }
 
-func init() { file_internal_proto_status_proto_init() }
-func file_internal_proto_status_proto_init() {
-	if File_internal_proto_status_proto != nil {
+func init() { file_protos_status_proto_init() }
+func file_protos_status_proto_init() {
+	if File_protos_status_proto != nil {
 		return
 	}
 	type x struct{}
 	out := protoimpl.TypeBuilder{
 		File: protoimpl.DescBuilder{
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
-			RawDescriptor: unsafe.Slice(unsafe.StringData(file_internal_proto_status_proto_rawDesc), len(file_internal_proto_status_proto_rawDesc)),
+			RawDescriptor: unsafe.Slice(unsafe.StringData(file_protos_status_proto_rawDesc), len(file_protos_status_proto_rawDesc)),
 			NumEnums:      0,
 			NumMessages:   3,
 			NumExtensions: 0,
 			NumServices:   1,
 		},
-		GoTypes:           file_internal_proto_status_proto_goTypes,
-		DependencyIndexes: file_internal_proto_status_proto_depIdxs,
-		MessageInfos:      file_internal_proto_status_proto_msgTypes,
+		GoTypes:           file_protos_status_proto_goTypes,
+		DependencyIndexes: file_protos_status_proto_depIdxs,
+		MessageInfos:      file_protos_status_proto_msgTypes,
 	}.Build()
-	File_internal_proto_status_proto = out.File
-	file_internal_proto_status_proto_goTypes = nil
-	file_internal_proto_status_proto_depIdxs = nil
+	File_protos_status_proto = out.File
+	file_protos_status_proto_goTypes = nil
+	file_protos_status_proto_depIdxs = nil
 }

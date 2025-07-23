@@ -6,8 +6,8 @@ import (
 	"net"
 
 	"github.com/MagicRodri/grpc_with_go/config"
-	"github.com/MagicRodri/grpc_with_go/pkg/helloworld"
-	"github.com/MagicRodri/grpc_with_go/pkg/status"
+	"github.com/MagicRodri/grpc_with_go/pkg/generated/helloworld"
+	"github.com/MagicRodri/grpc_with_go/pkg/generated/status"
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/reflection"
 )
@@ -21,7 +21,7 @@ type Server struct {
 }
 
 // NewServer creates a new gRPC server instance.
-func NewServer(cfg *config.GRPC) *Server {
+func NewServer(cfg *config.GrpcConfig) *Server {
 	return &Server{
 		grpcServer: grpc.NewServer(),
 		address:    cfg.Address,
