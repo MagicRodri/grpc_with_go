@@ -3,27 +3,19 @@ package config
 import (
 	"fmt"
 
+	"github.com/MagicRodri/grpc_with_go/pkg/logger"
+	"github.com/go-playground/validator/v10"
 	"github.com/spf13/viper"
 )
 
-type (
-	Config struct {
-		Kafka KafkaConfig `mapstructure:"kafka"`
-		GRPC  GRPC        `mapstructure:"grpc"`
-	}
+type GrpcConfig struct {
+	Address string `mapstructure:"address" validate:"required"`
+}
 
-	KafkaConfig struct {
-		Brokers     []string `mapstructure:"brokers"`
-		Credentials struct {
-			Username string `mapstructure:"username"`
-			Password string `mapstructure:"password"`
-		} `mapstructure:"credentials"`
-	}
-
-	GRPC struct {
-		Address string `mapstructure:"address"`
-	}
-)
+type Config struct {
+	GRPC   GrpcConfig    `mapstructure:"grpc" validate:"required"`
+	Logger logger.Config `mapstructure:"logger" validate:"required"`
+}
 
 func LoadConfig(path string) (*Config, error) {
 	viper.SetConfigFile(path)
@@ -35,6 +27,11 @@ func LoadConfig(path string) (*Config, error) {
 	var config Config
 	if err := viper.Unmarshal(&config); err != nil {
 		return nil, fmt.Errorf("error unmarshalling config: %w", err)
+	}
+
+	validate := validator.New(validator.WithRequiredStructEnabled())
+	if err := validate.Struct(&config); err != nil {
+		return nil, fmt.Errorf("failed to validate config file %s: %w", path, err)
 	}
 
 	return &config, nil

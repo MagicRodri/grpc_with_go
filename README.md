@@ -19,7 +19,7 @@ This project demonstrates how to build and use gRPC services in Go.
 1. Clone the repository:
 
    ```sh
-   git clone https://github.com/yourusername/grpc_with_go.git
+   git clone https://github.com/MagicRodri/grpc_with_go.git
    cd grpc_with_go
    ```
 
@@ -40,9 +40,4 @@ This project demonstrates how to build and use gRPC services in Go.
 
   ```sh
   go run server/main.go
-  ```
-
-- Run the client:
-  ```sh
-  go run client/main.go
   ```

@@ -1,6 +1,6 @@
-PROTO_DIR = internal/proto
-PROTO_FILE = $(PROTO_DIR)/*.proto
-OUT_DIR = pkg
+PROTO_DIR = protos
+PROTO_FILE = $(shell find $(PROTO_DIR) -name "*.proto")
+OUT_DIR = pkg/generated
 
 dev:
 	air .
