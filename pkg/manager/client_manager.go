@@ -42,7 +42,7 @@ func NewGrpcClientManager(log logger.LoggerInterface) *GrpcClientManager {
 	}
 }
 
-func (cm *GrpcClientManager) RegisterClient(client GrpcClientInterface, address string) error {
+func (cm *GrpcClientManager) RegisterClient(client GrpcClientInterface) error {
 	cm.mutex.Lock()
 	defer cm.mutex.Unlock()
 
@@ -50,7 +50,7 @@ func (cm *GrpcClientManager) RegisterClient(client GrpcClientInterface, address 
 		return fmt.Errorf("client '%s' is already registered", client.GetName())
 	}
 
-	conn, err := cm.createConnection(address)
+	conn, err := cm.createConnection(client.GetHost())
 	if err != nil {
 		return fmt.Errorf("failed to create connection for client '%s': %w", client.GetName(), err)
 	}

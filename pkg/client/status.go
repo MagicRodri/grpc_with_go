@@ -23,7 +23,7 @@ type StatusClient struct {
 
 type Status struct {
 	Uuid      string
-	Timestamp time.Time
+	Timestamp float64
 }
 
 func NewStatusClient(log logger.LoggerInterface, cfg *StatusServiceConfig) *StatusClient {
@@ -65,7 +65,7 @@ func (sc *StatusClient) SendStatusMessage(status *Status) error {
 
 	req := &status_service.StatusMessage{
 		Uuid:      status.Uuid,
-		Timestamp: timestamppb.New(status.Timestamp),
+		Timestamp: timestamppb.New(time.Unix(int64(status.Timestamp), 0)),
 	}
 
 	res, err := sc.client.SetStatus(ctx, req)
