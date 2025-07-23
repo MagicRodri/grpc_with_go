@@ -2,6 +2,7 @@ package main
 
 import (
 	"context"
+	"flag"
 	"log"
 
 	"github.com/MagicRodri/grpc_with_go/config"
@@ -9,8 +10,9 @@ import (
 )
 
 func main() {
-	configPath := "config/config.yaml"
-	cfg, err := config.LoadConfig(configPath)
+	configPath := flag.String("config", "config/config.yaml", "Path to the configuration file")
+	flag.Parse()
+	cfg, err := config.LoadConfig(*configPath)
 	if err != nil {
 		log.Printf("Error loading config: %v\n", err)
 		return

@@ -4,8 +4,8 @@ import (
 	"context"
 	"log"
 
-	"github.com/MagicRodri/grpc_with_go/pkg/helloworld"
-	"github.com/MagicRodri/grpc_with_go/pkg/status"
+	"github.com/MagicRodri/grpc_with_go/pkg/generated/helloworld"
+	"github.com/MagicRodri/grpc_with_go/pkg/generated/status"
 )
 
 func (s *Server) SayHello(_ context.Context, in *helloworld.HelloRequest) (*helloworld.HelloReply, error) {
